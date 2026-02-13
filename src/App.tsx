@@ -89,22 +89,22 @@ function App() {
                   </div>
                 </div>
                 
-                <div className="px-6 md:px-10 py-8 md:py-12">
-                  <p className="text-lg md:text-xl text-primary font-bold mb-2">
+                <div className="px-4 md:px-10 py-6 md:py-12 pb-10 md:pb-12">
+                  <p className="text-base md:text-xl text-primary font-bold mb-2">
                     Fer-<span className="text-accent italic">IA</span> Laboral 2026
                   </p>
                   
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4">
+                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 md:mb-4">
                     <span className="text-primary">EXPO</span>
                     <span className="text-gradient-magenta">TALENTOSAS</span>
                   </h2>
 
-                  <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-4 py-2 shadow-lg flex items-center gap-2 text-sm text-muted-foreground border-2 border-primary/10">
-                    <img src="/pixel-calendar.svg" alt="" className="w-5 h-5" />
+                  <div className="absolute -bottom-3 md:-bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-3 md:px-4 py-1.5 md:py-2 shadow-lg flex items-center gap-1.5 md:gap-2 text-xs md:text-sm text-muted-foreground border-2 border-primary/10 whitespace-nowrap">
+                    <img src="/pixel-calendar.svg" alt="" className="w-4 h-4 md:w-5 md:h-5" />
                     16, 17 y 18 de Marzo
                   </div>
                   
-                  <p className="mt-4 text-muted-foreground text-sm md:text-base">
+                  <p className="mt-2 md:mt-4 text-muted-foreground text-xs md:text-base">
                     Sube tu CV y haz <span className="text-gradient-magenta font-bold">Match</span> con ofertas laborales que te están buscando
                   </p>
                 </div>
@@ -112,18 +112,24 @@ function App() {
             </div>
             
             {/* Subtitle */}
-            <div className="mb-10 max-w-2xl mx-auto mt-12">
-              <p className="text-base md:text-lg text-white/90">
+            <div className="mb-6 md:mb-10 max-w-2xl mx-auto mt-10 md:mt-12">
+              <p className="text-sm md:text-lg text-white/90">
                 Haz match con las ofertas ideales para ti
               </p>
             </div>
 
+            {/* Add to Calendar Button */}
+            <div className="mb-8 md:mb-10">
+              <img src="/pixel-click.svg" alt="Click" className="w-10 h-8 md:w-15 md:h-12 inline mr-2 animate-pulse" />
+              <AddToCalendarButton variant="outline" size="lg" />
+            </div>
+
             {/* Countdown */}
-            <div className="max-w-3xl mx-auto mb-16">
+            <div className="max-w-3xl mx-auto mb-16 px-4">
               <div className="flex items-center justify-center gap-3 mb-6">
-                <h3 className="text-white font-bold text-xl md:text-2xl">Faltan solo</h3>
+                <h3 className="text-white font-bold text-lg md:text-2xl">Faltan solo</h3>
               </div>
-              <div className="grid grid-cols-4 gap-3 md:gap-6">
+              <div className="grid grid-cols-4 gap-2 md:gap-6">
                 {[
                   { value: timeLeft.days, label: 'Días' },
                   { value: timeLeft.hours, label: 'Horas' },
@@ -131,20 +137,15 @@ function App() {
                   { value: timeLeft.seconds, label: 'Seg' }
                 ].map((item, i) => (
                   <div key={i} className="relative">
-                    <div className="bg-white rounded-2xl p-4 md:p-6 border-4 border-white shadow-[6px_6px_0px_0px_hsl(var(--magenta))] hover:shadow-[8px_8px_0px_0px_hsl(var(--magenta))] transition-all hover:-translate-y-1">
-                      <div className="text-4xl md:text-6xl font-black text-gradient-magenta mb-1">
+                    <div className="bg-white rounded-xl md:rounded-2xl p-2 md:p-6 border-2 md:border-4 border-white shadow-[4px_4px_0px_0px_hsl(var(--magenta))] md:shadow-[6px_6px_0px_0px_hsl(var(--magenta))] hover:shadow-[6px_6px_0px_0px_hsl(var(--magenta))] md:hover:shadow-[8px_8px_0px_0px_hsl(var(--magenta))] transition-all hover:-translate-y-1">
+                      <div className="text-2xl md:text-6xl font-black text-gradient-magenta mb-0.5 md:mb-1">
                         {String(item.value).padStart(2, '0')}
                       </div>
-                      <div className="text-muted-foreground font-bold text-xs md:text-sm uppercase">{item.label}</div>
+                      <div className="text-muted-foreground font-bold text-[0.6rem] md:text-sm uppercase">{item.label}</div>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
-            {/* Add to Calendar Button */}
-            <div className="mb-10">
-              <img src="/pixel-click.svg" alt="Click" className="w-15 h-12 inline mr-2 animate-pulse" />
-              <AddToCalendarButton variant="outline" size="lg" />
             </div>
           </div>
         </div>
