@@ -48,6 +48,10 @@
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-magenta);
   }
+  
+  .text-magenta {
+    color: hsl(var(--magenta));
+  }
 
   .retro-card {
     @apply bg-white rounded-2xl border-2 border-primary/20 shadow-lg;
@@ -113,6 +117,68 @@
   100% {
     transform: translateX(100%);
   }
+}
+
+/* Match Heart Animation */
+@keyframes heartPop {
+  0% { transform: scale(0) translateY(0); opacity: 0; }
+  50% { transform: scale(1.2) translateY(-10px); opacity: 1; }
+  100% { transform: scale(0.8) translateY(-30px); opacity: 0; }
+}
+
+.heart-pop {
+  animation: heartPop 1.5s ease-out infinite;
+}
+
+/* Scan Line Animation */
+@keyframes scanLine {
+  0% { top: 0; opacity: 0; }
+  50% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, hsl(var(--magenta)), transparent);
+  animation: scanLine 2s ease-in-out infinite;
+  z-index: 10;
+}
+
+/* Neural Network Particles */
+@keyframes particleFloat {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(10px, -10px); }
+  50% { transform: translate(-5px, 5px); }
+  75% { transform: translate(-10px, -5px); }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: hsl(var(--magenta));
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: particleFloat 4s ease-in-out infinite;
+}
+
+/* Gradient Text Animation (for "Match") */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.text-match-animated {
+  background: linear-gradient(90deg, hsl(var(--magenta)), hsl(var(--pink)), hsl(var(--accent)), hsl(var(--magenta)));
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease infinite;
 }
 
 .shimmer-line {

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Calendar, Upload, Zap, Target, ArrowRight, Play, Check, Info, X } from 'lucide-react';
 import { AddToCalendarButton } from './components/AddToCalendarButton';
+import { MatchHearts } from './components/MatchHearts';
+import { AIParticles } from './components/AIParticles';
 
 function App() {
   const [showTutorial, setShowTutorial] = useState(false);
@@ -96,38 +98,32 @@ function App() {
                   
                   <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 md:mb-4">
                     <span className="text-primary">EXPO</span>
-                    <span className="text-gradient-magenta">TALENTOSAS</span>
+                    <span className="text-magenta">TALENTOSAS</span>
                   </h2>
 
-                  <div className="absolute -bottom-3 md:-bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-3 md:px-4 py-1.5 md:py-2 shadow-lg flex items-center gap-1.5 md:gap-2 text-xs md:text-sm text-muted-foreground border-2 border-primary/10 whitespace-nowrap">
-                    <img src="/pixel-calendar.svg" alt="" className="w-4 h-4 md:w-5 md:h-5" />
-                    16, 17 y 18 de Marzo
+                  <div className="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2">
+                    {/* Animated glow rings */}
+                    <div className="absolute inset-0 rounded-2xl animate-pulse" style={{ background: 'hsl(var(--pink) / 1)', filter: 'blur(12px)' }} />
+                    
+                    {/* Badge content */}
+                    <div className="relative bg-white rounded-2xl px-6 md:px-8 py-3 md:py-4 shadow-lg flex items-center gap-2 md:gap-3 text-sm md:text-lg font-bold text-pink border-2 border-primary/20 whitespace-nowrap">
+                      <img src="/pixel-calendar.svg" alt="" className="w-6 h-6 md:w-8 md:h-8" />
+                      16, 17 y 18 de Marzo
+                    </div>
                   </div>
                   
                   <p className="mt-2 md:mt-4 text-muted-foreground text-xs md:text-base">
-                    Sube tu CV y haz <span className="text-gradient-magenta font-bold">Match</span> con ofertas laborales que te están buscando
+                    Sube tu CV y haz <span className="text-match-animated font-bold">MATCH</span> con ofertas laborales que te están buscando
                   </p>
                 </div>
               </div>
             </div>
-            
-            {/* Subtitle */}
-            <div className="mb-6 md:mb-10 max-w-2xl mx-auto mt-10 md:mt-12">
-              <p className="text-sm md:text-lg text-white/90">
-                Haz match con las ofertas ideales para ti
-              </p>
-            </div>
-
-            {/* Add to Calendar Button */}
-            <div className="mb-8 md:mb-10">
-              <img src="/pixel-click.svg" alt="Click" className="w-10 h-8 md:w-15 md:h-12 inline mr-2 animate-pulse" />
-              <AddToCalendarButton variant="outline" size="lg" />
-            </div>
 
             {/* Countdown */}
-            <div className="max-w-3xl mx-auto mb-16 px-4">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <h3 className="text-white font-bold text-lg md:text-2xl">Faltan solo</h3>
+            <div className="max-w-3xl mx-auto mb-16">
+              <div className="flex items-center justify-center gap-2 md:gap-3 mb-6 bg-white/10 backdrop-blur-sm rounded-full px-4 md:px-6 py-2 md:py-3 mx-auto w-fit border-2 border-white/20">
+                <Calendar className="w-4 h-4 md:w-4 md:h-4 text-white" />
+                <h4 className="text-white font-bold text-base md:text-l">Faltan solo:</h4>
               </div>
               <div className="grid grid-cols-4 gap-2 md:gap-6">
                 {[
@@ -138,14 +134,19 @@ function App() {
                 ].map((item, i) => (
                   <div key={i} className="relative">
                     <div className="bg-white rounded-xl md:rounded-2xl p-2 md:p-6 border-2 md:border-4 border-white shadow-[4px_4px_0px_0px_hsl(var(--magenta))] md:shadow-[6px_6px_0px_0px_hsl(var(--magenta))] hover:shadow-[6px_6px_0px_0px_hsl(var(--magenta))] md:hover:shadow-[8px_8px_0px_0px_hsl(var(--magenta))] transition-all hover:-translate-y-1">
-                      <div className="text-2xl md:text-6xl font-black text-gradient-magenta mb-0.5 md:mb-1">
+                      <div className="text-2xl md:text-6xl font-black text-gradient-magenta mb-0 md:mb-1">
                         {String(item.value).padStart(2, '0')}
                       </div>
-                      <div className="text-muted-foreground font-bold text-[0.6rem] md:text-sm uppercase">{item.label}</div>
+                      <div className="text-muted-foreground font-bold text-[10px] md:text-sm uppercase">{item.label}</div>
                     </div>
                   </div>
                 ))}
               </div>
+            </div>
+            {/* Add to Calendar Button */}
+            <div className="mb-10">
+              <img src="/pixel-click.svg" alt="Click" className="w-15 h-12 inline mr-2 animate-pulse" />
+              <AddToCalendarButton variant="outline" size="lg" />
             </div>
           </div>
         </div>
@@ -180,7 +181,8 @@ function App() {
       <section className="py-24 md:py-32 bg-background">
         <div className="container-tight">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-magenta text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <img src="/pixel-shine.svg" className="w-15 h-12 inline mr-2 animate-pulse" />
               ¿Cómo funciona?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -195,29 +197,51 @@ function App() {
                 title: "Sube tu CV",
                 desc: "Carga tu CV en PDF o Word.",
                 step: 1,
-                features: ["Formatos PDF, DOCX, TXT", "Análisis en segundos", "100% privado"]
+                features: ["Formatos PDF, DOCX, TXT", "Análisis en segundos", "100% privado"],
+                effect: 'scan'
               },
               {
                 icon: Zap,
                 title: "IA completa tu perfil",
                 desc: "La IA extrae tu experiencia automáticamente.",
                 step: 2,
-                features: ["Extracción automática", "Detección de habilidades", "Análisis inteligente"]
+                features: ["Extracción automática", "Detección de habilidades", "Análisis inteligente"],
+                effect: 'ai'
               },
               {
                 icon: Target,
                 title: "Smart Match",
                 desc: "Ofertas ordenadas por compatibilidad.",
                 step: 3,
-                features: ["Matching personalizado", "Postula con 1 click", "Resultados instantáneos"]
+                features: ["Matching personalizado", "Postula con 1 click", "Resultados instantáneos"],
+                effect: 'match'
               },
             ].map((step, i) => (
-              <div key={i} className="relative bg-white rounded-2xl p-8 border-2 border-border shadow-[4px_4px_0px_0px_hsl(var(--accent)/0.2)] hover:shadow-[6px_6px_0px_0px_hsl(var(--accent)/0.3)] transition-all duration-300 hover:-translate-y-1">
+              <div key={i} className="relative bg-white rounded-2xl p-8 border-2 border-border shadow-[4px_4px_0px_0px_hsl(var(--accent)/0.2)] hover:shadow-[6px_6px_0px_0px_hsl(var(--accent)/0.3)] transition-all duration-300 hover:-translate-y-1 animate-fade-in group" style={{ animationDelay: `${i * 0.1}s` }}>
+                {/* Efectos animados según el tipo de paso */}
+                {step.effect === 'scan' && (
+                  <div className="absolute inset-0 overflow-hidden rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="scan-line" />
+                  </div>
+                )}
+                
+                {step.effect === 'ai' && (
+                  <div className="absolute inset-0 overflow-hidden rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity">
+                    <AIParticles />
+                  </div>
+                )}
+                
+                {step.effect === 'match' && (
+                  <div className="absolute inset-0 overflow-hidden rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity">
+                    <MatchHearts />
+                  </div>
+                )}
+                
                 <div className="relative mb-6">
                   <div className="w-16 h-16 rounded-xl flex items-center justify-center" style={{ background: 'var(--gradient-magenta)' }}>
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="absolute -bottom-2 -right-2 w-7 h-7 rounded-full bg-foreground text-background text-sm font-bold flex items-center justify-center">
+                  <div className="absolute -bottom-2 -right-2 w-7 h-7 rounded-full text-white text-sm font-bold flex items-center justify-center animate-scale-in shadow-lg" style={{ background: 'var(--gradient-magenta)', animationDelay: `${i * 0.1 + 0.2}s` }}>
                     {step.step}
                   </div>
                 </div>
@@ -227,8 +251,8 @@ function App() {
                 
                 <ul className="space-y-2">
                   {step.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Check className="w-4 h-4 flex-shrink-0" style={{ color: 'hsl(var(--magenta))' }} />
+                    <li key={j} className="flex items-center gap-2 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: `${i * 0.1 + j * 0.05}s` }}>
+                      <Check className="w-4 h-4 flex-shrink-0 text-magenta animate-scale-in" style={{ animationDelay: `${i * 0.1 + j * 0.05 + 0.1}s` }} />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -279,7 +303,7 @@ function App() {
                 </div>
               </div>
               <div className="p-6 md:p-8">
-                <h3 className="font-bold text-xl mb-3 text-foreground">Síguenos en nuestras redes sociales</h3>
+                <h3 className="font-bold text-xl mb-3 text-foreground text-primary">Síguenos en nuestras redes sociales</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                   Mantente al día con las últimas noticias, consejos y oportunidades laborales siguiéndonos en nuestras redes sociales.
                 </p>
@@ -343,7 +367,8 @@ function App() {
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
             <div className="sticky top-0 bg-white border-b-2 border-primary/10 px-6 py-4 flex items-center justify-between">
-              <h3 className="text-2xl font-bold">Tutorial: ¿Cómo usar Expo Talentosas?</h3>
+              <img src="/pixel-shine.svg" className="w-10 h-10 inline animate-pulse" />
+              <h3 className="text-magenta text-2xl font-bold">Tutorial: ¿Cómo usar Expo Talentosas?</h3>
               <button
                 onClick={() => setShowTutorial(false)}
                 className="w-10 h-10 rounded-full hover:bg-muted flex items-center justify-center transition-colors"
@@ -352,7 +377,7 @@ function App() {
               </button>
             </div>
             
-            <div className="p-6 space-y-6">
+            <div className="p-6 space-y-4">
               {[
                 {
                   icon: Upload,
@@ -385,18 +410,20 @@ function App() {
                   number: "05"
                 },
               ].map((step, i) => (
-                <div key={i} className="flex gap-4 items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center relative" style={{ background: 'var(--gradient-magenta)' }}>
-                      <step.icon className="w-6 h-6 text-white" />
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-foreground text-background text-xs font-bold flex items-center justify-center">
-                        {step.number}
+                <div key={i} className="bg-muted/50 rounded-xl p-5 border border-border hover:border-accent/50 transition-all hover:shadow-md animate-fade-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                  <div className="flex gap-4 items-start">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center relative shadow-lg animate-scale-in" style={{ background: 'var(--gradient-magenta)', animationDelay: `${i * 0.1}s` }}>
+                        <step.icon className="w-6 h-6 text-white" />
+                        <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-white text-xs font-bold flex items-center justify-center  animate-scale-in" style={{ color: 'hsl(var(--magenta))', borderColor: 'hsl(var(--magenta))', animationDelay: `${i * 0.1 + 0.2}s` }}>
+                          {step.number}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-1">{step.title}</h4>
-                    <p className="text-muted-foreground">{step.description}</p>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-base mb-2 text-foreground">{step.title}</h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
+                    </div>
                   </div>
                 </div>
               ))}

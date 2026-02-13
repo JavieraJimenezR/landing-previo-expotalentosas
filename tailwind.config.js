@@ -9,6 +9,7 @@ export default {
       colors: {
         primary: 'hsl(220, 90%, 56%)',
         accent: 'hsl(280, 100%, 70%)',
+        magenta: 'hsl(327, 95%, 55%)',
         pink: 'hsl(330, 100%, 71%)',
         background: 'hsl(0, 0%, 100%)',
         foreground: 'hsl(222, 47%, 11%)',
