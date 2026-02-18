@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Upload, Zap, Target, ArrowRight, Play, Check, Info, X } from 'lucide-react';
+import { Calendar, Upload, Zap, Target, ArrowRight, Play, Check, Info, X, Heart } from 'lucide-react';
 import { AddToCalendarButton } from './components/AddToCalendarButton';
 import { MatchHearts } from './components/MatchHearts';
 import { AIParticles } from './components/AIParticles';
@@ -352,11 +352,8 @@ function App() {
 
           {/* Bottom Copyright */}
           <div className="text-center space-y-3">
-            <p className="text-sm text-white/60">
-              © 2026 CENIA. Todos los derechos reservados.
-            </p>
-            <p className="text-sm text-white/80">
-              Hecho con 💜 para las talentosas de Chile
+            <p className="text-sm text-white/80 flex items-center justify-center gap-1">
+              Hecho con <Heart className="w-4 h-4 text-white animate-bounce" /> para las talentosas de Chile
             </p>
           </div>
         </div>
