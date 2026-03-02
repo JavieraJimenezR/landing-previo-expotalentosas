@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Upload, Zap, Target, ArrowRight, Play, Check, Info, X, Heart } from 'lucide-react';
+import { Calendar, Upload, Zap, Target, ArrowRight, Check, Info, X, Heart } from 'lucide-react';
 import { AddToCalendarButton } from './components/AddToCalendarButton';
 import { MatchHearts } from './components/MatchHearts';
 import { AIParticles } from './components/AIParticles';
@@ -40,113 +40,73 @@ function App() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-primary">
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 grid-pattern opacity-30" />
-        
-        {/* Gradient Blurs */}
-        <div className="absolute top-20 right-10 w-96 h-96 bg-accent/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full blur-3xl" style={{ background: 'hsl(var(--magenta) / 0.3)' }} />
-
-        {/* Shimmer effect line */}
-        <div className="absolute top-1/2 left-0 right-0 shimmer-line" />
-
-        {/* Decorative pixel icons */}
-        <div className="absolute top-10 right-10 md:top-20 md:right-20 animate-pulse hidden md:block">
-          <img src="/pixel-shine.svg" alt="" className="w-16 h-16 md:w-20 md:h-20 opacity-60" />
-        </div>
-        <div className="absolute bottom-32 left-10 md:bottom-40 md:left-20 animate-pulse hidden md:block">
-          <img src="/pixel-world.svg" alt="" className="w-20 h-20 opacity-50" />
-        </div>
-        <div className="absolute top-1/3 left-1/4 animate-pulse hidden lg:block">
-          <img src="/pixel-click.svg" alt="" className="w-12 h-12 opacity-40" style={{ transform: 'rotate(-15deg)' }} />
-        </div>
-        <div className="absolute bottom-1/4 right-1/4 animate-pulse hidden lg:block">
-          <img src="/pixel-shine.svg" alt="" className="w-14 h-14 opacity-50" style={{ transform: 'rotate(25deg)' }} />
+      <section className="relative min-h-screen flex flex-col overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <img src="/fondo.jpg" alt="" className="w-full h-full object-cover" />
         </div>
 
-        <div className="container-tight relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+        {/* Top Navbar */}
+        <div className="relative z-10 flex items-center justify-center gap-20 md:gap-32 lg:gap-40 px-6 md:px-12 pt-6 md:pt-8 mb-6">
+          <img src="/logo-expotalentosas.svg" alt="Expo Talentosas" className="h-16 md:h-20 lg:h-24" />
+          <img src="/logo-teamwork.svg" alt="TeamWork" className="h-10 md:h-12 lg:h-16" />
+        </div>
 
-            {/* Logo above browser */}
-            <div>
-              <img src="/logo-expotalentosas.svg" alt="Expo Talentosas" className="max-w-full h-auto mx-auto" style={{ maxHeight: '100px' }} />
-            </div>
-            
-            {/* by teamwork*/}
-                <div className="mb-8 text-sm text-white/80">
-                    Una iniciativa de 
-                    <img src="/logo-teamwork.svg" alt="TeamWork" className="inline-block h-8 ml-1 mb-2" />
-                </div>
+        <div className="flex-1 flex items-center relative z-10">
+          <div className="w-full px-6 md:px-12">
+            <div className="max-w-3xl mx-auto text-center">
 
-            {/* Browser Window */}
-            <div className="relative max-w-2xl mx-auto mb-10 animate-scale-in">
-              <div className="retro-card overflow-hidden">
-                {/* Browser Header */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-muted border-b-2 border-primary/10">
-                  <div className="flex gap-1.5">
-                    <span className="w-3 h-3 rounded-full retro-control-pink" />
-                    <span className="w-3 h-3 rounded-full retro-control-violet" />
-                    <span className="w-3 h-3 rounded-full retro-control-blue" />
-                  </div>
-                </div>
-                
-                <div className="px-4 md:px-10 py-6 md:py-12 pb-10 md:pb-12">
-                  <p className="text-base md:text-xl text-primary font-bold mb-2">
-                    Fer-<span className="text-accent italic">IA</span> Laboral 2026
+              {/* Glassmorphism Main Card */}
+              <div className="relative max-w-[680px] mx-auto mb-12 animate-scale-in">
+                <div className="rounded-3xl border border-white/30 px-8 md:px-14 pt-8 md:pt-10 pb-14 md:pb-16" style={{ background: 'linear-gradient(160deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 100%)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
+                  
+                  <p className="text-base md:text-lg text-white/90 font-bold mb-2">
+                    Fer-<span className="italic">IA</span> <span className="not-italic font-light">Laboral Virtual </span>2026
                   </p>
                   
-                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 md:mb-4">
-                    <span className="text-primary">EXPO</span>
-                    <span className="text-magenta">TALENTOSAS</span>
-                  </h2>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-3 text-white whitespace-nowrap">EXPO TALENTOSAS</h2>
+                  
+                  <p className="text-white/70 text-sm md:text-base">
+                    Sube tu CV y haz <span className="font-bold text-white">MATCH</span> con ofertas laborales que te están buscando.
+                  </p>
 
-                  <div className="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2">
-                    {/* Animated glow rings */}
-                    <div className="absolute inset-0 rounded-2xl animate-pulse" style={{ background: 'hsl(var(--pink) / 1)', filter: 'blur(12px)' }} />
-                    
-                    {/* Badge content */}
-                    <div className="relative bg-white rounded-2xl px-6 md:px-8 py-3 md:py-4 shadow-lg flex items-center gap-2 md:gap-3 text-sm md:text-lg font-bold text-pink border-2 border-primary/20 whitespace-nowrap">
-                      <img src="/pixel-calendar.svg" alt="" className="w-6 h-6 md:w-8 md:h-8" />
-                      16, 17 y 18 de Marzo
+                  {/* Date Badge - positioned at bottom of card */}
+                  <div className="absolute -bottom-5 md:-bottom-6 left-1/2 -translate-x-1/2">
+                    <div className="bg-white rounded-full px-6 md:px-8 py-2.5 md:py-3 shadow-lg flex items-center gap-2 md:gap-3 text-sm md:text-base font-bold whitespace-nowrap" style={{ color: '#2563eb' }}>
+                      <Calendar className="w-5 h-5 md:w-5 md:h-5" />
+                      16, 17 y 18 de marzo
                     </div>
                   </div>
-                  
-                  <p className="mt-2 md:mt-4 text-muted-foreground text-xs md:text-base">
-                    Sube tu CV y haz <span className="text-match-animated font-bold">MATCH</span> con ofertas laborales que te están buscando
-                  </p>
                 </div>
               </div>
-            </div>
 
-            {/* Countdown */}
-            <div className="max-w-3xl mx-auto mb-16">
-              <div className="flex items-center justify-center gap-2 md:gap-3 mb-6 bg-white/10 backdrop-blur-sm rounded-full px-4 md:px-6 py-2 md:py-3 mx-auto w-fit border-2 border-white/20">
-                <Calendar className="w-4 h-4 md:w-4 md:h-4 text-white" />
-                <h4 className="text-white font-bold text-base md:text-l">Faltan solo:</h4>
-              </div>
-              <div className="grid grid-cols-4 gap-2 md:gap-6">
-                {[
-                  { value: timeLeft.days, label: 'Días' },
-                  { value: timeLeft.hours, label: 'Horas' },
-                  { value: timeLeft.minutes, label: 'Min' },
-                  { value: timeLeft.seconds, label: 'Seg' }
-                ].map((item, i) => (
-                  <div key={i} className="relative">
-                    <div className="bg-white rounded-xl md:rounded-2xl p-2 md:p-6 border-2 md:border-4 border-white shadow-[4px_4px_0px_0px_hsl(var(--magenta))] md:shadow-[6px_6px_0px_0px_hsl(var(--magenta))] hover:shadow-[6px_6px_0px_0px_hsl(var(--magenta))] md:hover:shadow-[8px_8px_0px_0px_hsl(var(--magenta))] transition-all hover:-translate-y-1">
-                      <div className="text-2xl md:text-6xl font-black text-gradient-magenta mb-0 md:mb-1">
-                        {String(item.value).padStart(2, '0')}
+              {/* Countdown */}
+              <div className="max-w-[680px] mx-auto mb-10">
+                <h4 className="text-white font-bold text-sm md:text-base mb-4">Faltan solo:</h4>
+                <div className="rounded-2xl border border-white/30 py-4 md:py-5 px-2 md:px-4 inline-flex items-center" style={{ background: 'linear-gradient(160deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.05) 100%)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
+                  {[
+                    { value: timeLeft.days, label: 'Días' },
+                    { value: timeLeft.hours, label: 'Horas' },
+                    { value: timeLeft.minutes, label: 'Minutos' },
+                    { value: timeLeft.seconds, label: 'Segundos' }
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center">
+                      <div className="px-5 md:px-8 py-1 text-center">
+                        <div className="text-3xl md:text-5xl font-black text-white leading-tight">
+                          {String(item.value).padStart(2, '0')}
+                        </div>
+                        <div className="text-white/50 font-semibold text-[9px] md:text-[11px] uppercase tracking-wider mt-1">{item.label}</div>
                       </div>
-                      <div className="text-muted-foreground font-bold text-[10px] md:text-sm uppercase">{item.label}</div>
+                      {i < 3 && <div className="w-px h-14 md:h-16 bg-white/25 flex-shrink-0" />}
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-            {/* Add to Calendar Button */}
-            <div className="mb-10">
-              <img src="/pixel-click.svg" alt="Click" className="w-15 h-12 inline mr-2 animate-pulse" />
-              <AddToCalendarButton variant="outline" size="lg" />
+
+              {/* Add to Calendar Button */}
+              <div className="mb-10">
+                <AddToCalendarButton variant="glass" size="lg" />
+              </div>
             </div>
           </div>
         </div>

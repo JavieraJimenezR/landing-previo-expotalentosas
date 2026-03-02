@@ -2,7 +2,7 @@ import { Calendar, ChevronDown } from 'lucide-react';
 import { addExpoTalentosasToCalendar } from '../utils/calendarUtils';
 
 interface AddToCalendarButtonProps {
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'glass';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
 }
@@ -18,7 +18,8 @@ export function AddToCalendarButton({
   const variants = {
     primary: 'bg-primary text-white border-2 border-primary shadow-[4px_4px_0px_0px_hsl(var(--accent))] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]',
     secondary: 'bg-white text-primary border-2 border-primary hover:bg-primary/5',
-    outline: 'bg-transparent text-white border-2 border-white hover:bg-white/10'
+    outline: 'bg-transparent text-white border-2 border-white hover:bg-white/10',
+    glass: 'text-white border border-white/30 hover:bg-white/20 backdrop-blur-xl',
   };
 
   const sizes = {
@@ -35,6 +36,7 @@ export function AddToCalendarButton({
     <button
       onClick={handleClick}
       className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`}
+      style={variant === 'glass' ? { background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%)' } : undefined}
       aria-label="Agregar Expo Talentosas a mi calendario"
     >
       <Calendar className="w-5 h-5" />
