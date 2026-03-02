@@ -64,7 +64,7 @@ function App() {
                     Fer-<span className="italic">IA</span> <span className="not-italic font-light">Laboral Virtual </span>2026
                   </p>
                   
-                  <h2 className="font-black tracking-tight mb-3 text-white whitespace-nowrap" style={{ fontSize: 'min(8vw, 3.75rem)' }}>EXPO TALENTOSAS</h2>
+                  <h2 className="font-black tracking-tight mb-3 text-white text-3xl md:text-5xl lg:text-6xl">EXPO TALENTOSAS</h2>
                   
                   <p className="text-white/70 text-sm md:text-base">
                     Sube tu CV y haz <span className="font-bold text-white">MATCH</span> con ofertas laborales que te están buscando.
