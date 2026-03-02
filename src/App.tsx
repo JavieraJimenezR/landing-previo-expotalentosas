@@ -47,33 +47,33 @@ function App() {
         </div>
 
         {/* Top Navbar */}
-        <div className="relative z-10 flex items-center justify-center px-6 md:px-12 pt-6 md:pt-8 mb-6" style={{ gap: 'clamp(2rem, 15vw, 10rem)' }}>
-          <img src="/logo-expotalentosas.svg" alt="Expo Talentosas" className="h-16 md:h-20 lg:h-24" />
-          <img src="/logo-teamwork.svg" alt="TeamWork" className="h-10 md:h-12 lg:h-16" />
+        <div className="relative z-10 flex items-center justify-center px-4 md:px-12 pt-4 md:pt-8" style={{ gap: 'clamp(1rem, 12vw, 10rem)', marginBottom: 'clamp(0.25rem, 3vh, 1.5rem)' }}>
+          <img src="/logo-expotalentosas.svg" alt="Expo Talentosas" className="h-10 sm:h-16 md:h-20 lg:h-24" />
+          <img src="/logo-teamwork.svg" alt="TeamWork" className="h-6 sm:h-10 md:h-12 lg:h-16" />
         </div>
 
         <div className="flex-1 flex items-center relative z-10">
-          <div className="w-full px-6 md:px-12">
+          <div className="w-full px-4 sm:px-6 md:px-12">
             <div className="max-w-3xl mx-auto text-center">
 
               {/* Glassmorphism Main Card */}
-              <div className="relative max-w-[680px] mx-auto mb-12 animate-scale-in">
-                <div className="rounded-3xl border border-white/30 px-8 md:px-14 pt-8 md:pt-10 pb-14 md:pb-16" style={{ background: 'linear-gradient(160deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 100%)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
+              <div className="relative max-w-[680px] mx-auto mb-10 sm:mb-12 animate-scale-in">
+                <div className="rounded-2xl sm:rounded-3xl border border-white/30 px-5 sm:px-8 md:px-14 pt-6 sm:pt-8 md:pt-10 pb-12 sm:pb-14 md:pb-16" style={{ background: 'linear-gradient(160deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 100%)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
                   
-                  <p className="text-base md:text-lg text-white/90 font-bold mb-2">
+                  <p className="text-sm sm:text-base md:text-lg text-white/90 font-bold mb-2">
                     Fer-<span className="italic">IA</span> <span className="not-italic font-light">Laboral Virtual </span>2026
                   </p>
                   
-                  <h2 className="font-black tracking-tight mb-3 text-white text-3xl md:text-5xl lg:text-6xl">EXPO TALENTOSAS</h2>
+                  <h2 className="font-black tracking-tight mb-2 sm:mb-3 text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl">EXPO TALENTOSAS</h2>
                   
-                  <p className="text-white/70 text-sm md:text-base">
+                  <p className="text-white/70 text-xs sm:text-sm md:text-base">
                     Sube tu CV y haz <span className="font-bold text-white">MATCH</span> con ofertas laborales que te están buscando.
                   </p>
 
                   {/* Date Badge - positioned at bottom of card */}
-                  <div className="absolute -bottom-5 md:-bottom-6 left-1/2 -translate-x-1/2">
-                    <div className="bg-white rounded-full px-6 md:px-8 py-2.5 md:py-3 shadow-lg flex items-center gap-2 md:gap-3 text-sm md:text-base font-bold whitespace-nowrap" style={{ color: '#2563eb' }}>
-                      <Calendar className="w-5 h-5 md:w-5 md:h-5" />
+                  <div className="absolute -bottom-4 sm:-bottom-5 md:-bottom-6 left-1/2 -translate-x-1/2">
+                    <div className="bg-white rounded-full px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 shadow-lg flex items-center gap-1.5 sm:gap-2 md:gap-3 text-xs sm:text-sm md:text-base font-bold whitespace-nowrap" style={{ color: '#2563eb' }}>
+                      <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
                       16, 17 y 18 de marzo
                     </div>
                   </div>
@@ -81,9 +81,9 @@ function App() {
               </div>
 
               {/* Countdown */}
-              <div className="max-w-[680px] mx-auto mb-10">
-                <h4 className="text-white font-bold text-sm md:text-base mb-4">Faltan solo:</h4>
-                <div className="rounded-2xl border border-white/30 py-4 md:py-5 px-2 md:px-4 inline-flex items-center" style={{ background: 'linear-gradient(160deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.05) 100%)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
+              <div className="max-w-[680px] mx-auto mb-8 sm:mb-10">
+                <h4 className="text-white font-bold text-xs sm:text-sm md:text-base mb-3 sm:mb-4">Faltan solo:</h4>
+                <div className="rounded-xl sm:rounded-2xl border border-white/30 py-3 sm:py-4 md:py-5 px-1 sm:px-2 md:px-4 inline-flex items-center" style={{ background: 'linear-gradient(160deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.05) 100%)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
                   {[
                     { value: timeLeft.days, label: 'Días' },
                     { value: timeLeft.hours, label: 'Horas' },
@@ -91,20 +91,20 @@ function App() {
                     { value: timeLeft.seconds, label: 'Segundos' }
                   ].map((item, i) => (
                     <div key={i} className="flex items-center">
-                      <div className="px-5 md:px-8 py-1 text-center">
-                        <div className="text-3xl md:text-5xl font-black text-white leading-tight">
+                      <div className="px-2.5 sm:px-5 md:px-8 py-1 text-center">
+                        <div className="text-2xl sm:text-3xl md:text-5xl font-black text-white leading-tight">
                           {String(item.value).padStart(2, '0')}
                         </div>
-                        <div className="text-white/50 font-semibold text-[9px] md:text-[11px] uppercase tracking-wider mt-1">{item.label}</div>
+                        <div className="text-white/50 font-semibold text-[7px] sm:text-[9px] md:text-[11px] uppercase tracking-wider mt-1">{item.label}</div>
                       </div>
-                      {i < 3 && <div className="w-px h-14 md:h-16 bg-white/25 flex-shrink-0" />}
+                      {i < 3 && <div className="w-px h-10 sm:h-14 md:h-16 bg-white/25 flex-shrink-0" />}
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Add to Calendar Button */}
-              <div className="mb-10">
+              <div className="mb-6 sm:mb-10">
                 <AddToCalendarButton variant="glass" size="lg" />
               </div>
             </div>
