@@ -47,7 +47,7 @@ function App() {
         </div>
 
         {/* Top Navbar */}
-        <div className="relative z-10 flex items-center justify-center gap-20 md:gap-32 lg:gap-40 px-6 md:px-12 pt-6 md:pt-8 mb-6">
+        <div className="relative z-10 flex items-center justify-center px-6 md:px-12 pt-6 md:pt-8 mb-6" style={{ gap: 'clamp(2rem, 15vw, 10rem)' }}>
           <img src="/logo-expotalentosas.svg" alt="Expo Talentosas" className="h-16 md:h-20 lg:h-24" />
           <img src="/logo-teamwork.svg" alt="TeamWork" className="h-10 md:h-12 lg:h-16" />
         </div>
@@ -64,7 +64,7 @@ function App() {
                     Fer-<span className="italic">IA</span> <span className="not-italic font-light">Laboral Virtual </span>2026
                   </p>
                   
-                  <h2 className="font-black tracking-tight mb-3 text-white" style={{ fontSize: 'clamp(1.75rem, 8vw, 3.75rem)' }}>EXPO TALENTOSAS</h2>
+                  <h2 className="font-black tracking-tight mb-3 text-white whitespace-nowrap" style={{ fontSize: 'min(8vw, 3.75rem)' }}>EXPO TALENTOSAS</h2>
                   
                   <p className="text-white/70 text-sm md:text-base">
                     Sube tu CV y haz <span className="font-bold text-white">MATCH</span> con ofertas laborales que te están buscando.
